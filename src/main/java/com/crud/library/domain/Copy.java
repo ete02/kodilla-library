@@ -18,7 +18,7 @@ import java.util.List;
 public class Copy {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy = GenerationType.AUTO)
     private Long copiesId;
 
     @NotNull

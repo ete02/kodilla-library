@@ -17,7 +17,7 @@ import java.util.Date;
 public class Borrow {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy = GenerationType.AUTO)
     private Long borrowId;
 
     @CreationTimestamp
