@@ -8,11 +8,11 @@ group = 'com.crud'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
-configurations {
+/*configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
-}
+}*/
 
 repositories {
 	mavenCentral()
@@ -31,7 +31,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
-//    compile 'org.junit.jupiter:junit-jupiter-api:5.6.3'
+	compile 'org.junit.jupiter:junit-jupiter-api:5.6.3'
 
 }
 
