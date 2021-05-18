@@ -1,9 +1,11 @@
 package com.crud.library.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @AllArgsConstructor
@@ -20,8 +22,13 @@ public class Borrow {
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Long borrowId;
 
-    @CreationTimestamp
-    private Date date;
+    @Column(name="BORROW_DATE")
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate borrowDate;
+
+    @Column(name="RETURN_DATE")
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate returnDate;
 
     @ManyToOne
     @JoinColumn(name="READER_ID")

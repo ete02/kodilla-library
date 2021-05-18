@@ -31,5 +31,5 @@ public class Copy {
     private Borrow borrow;
 
 
-    private List<Borrow> borrows = new ArrayList<>();
+    private final List<Borrow> borrows = new ArrayList<>();
 }

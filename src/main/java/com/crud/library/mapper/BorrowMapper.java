@@ -2,6 +2,8 @@ package com.crud.library.mapper;
 
 import com.crud.library.domain.Borrow;
 import com.crud.library.dto.BorrowDto;
+import com.crud.library.service.CopyService;
+import com.crud.library.service.ReaderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +12,10 @@ import java.util.stream.Collectors;
 
 @Service
 public class BorrowMapper {
-    @Autowired
-    ReaderService readerService;
-    @Autowired
-    CopyService copyService;
+
+    private ReaderService readerService;
+
+    private CopyService copyService;
 
     public Borrow mapToBorrow(final BorrowDto borrowDto) {
         Borrow borrow = new Borrow();
@@ -27,7 +29,7 @@ public class BorrowMapper {
     public BorrowDto mapToBorrowDto(final Borrow borrow) {
         return new BorrowDto(
                 borrow.getBorrowId(),
-                borrow.getDate(),
+                borrow.getBorrowDate(),
                 borrow.getReader(),
                 borrow.getCopy());
     }

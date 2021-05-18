@@ -1,9 +1,11 @@
 package com.crud.library.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @AllArgsConstructor
@@ -26,6 +28,7 @@ public class BorrowProcess {
     @Column(name="BOOK_TITLE")
     private String bookTitle;
 
-    @CreationTimestamp
-    private Date borrowProcessDate;
+    @Column(name = "RETURN_DATE")
+    @JsonFormat (pattern = "yyyy-mm-dd")
+    private LocalDate returnDate;
 }

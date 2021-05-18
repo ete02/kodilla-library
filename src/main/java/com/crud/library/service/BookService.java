@@ -13,8 +13,8 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class BookService {
 
-    @Autowired
-    BookRepository bookRepository;
+
+    private final BookRepository bookRepository;
 
 
     public List<Book> getAllBooks() {
@@ -28,6 +28,7 @@ public class BookService {
     public Book getBookById(final Long id) {
         return bookRepository.findById(id).get();
     }
+
 
     public void deleteBookById(Long id) {
         bookRepository.deleteById(id);
